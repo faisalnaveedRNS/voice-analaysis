@@ -4,7 +4,7 @@ from pyannote.audio.pipelines import OverlappedSpeechDetection
 
 model = Model.from_pretrained(
   "pyannote/segmentation-3.0", 
-  use_auth_token="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")
+  use_auth_token="TOKEN_HERE")
 
 pipeline = VoiceActivityDetection(segmentation=model)
 HYPER_PARAMETERS = {
@@ -29,7 +29,5 @@ HYPER_PARAMETERS = {
 }
 pipeline.instantiate(HYPER_PARAMETERS)
 osd = pipeline("facebookdenoiser.wav")
-
-
 print ("===============Overlapped speech detection=========")
 print (osd)
